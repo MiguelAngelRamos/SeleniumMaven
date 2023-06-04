@@ -1,0 +1,29 @@
+package test;
+
+import java.sql.Statement;
+
+import connection.DBConnection;
+
+public class OperacionesDB {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		updatedBook(1, "Historia");
+	}
+	
+	public static void updatedBook(int id, String genre) {
+		DBConnection conexion = DBConnection.getInstance();
+		String sql = "UPDATE books SET genre = '" + genre + "' WHERE id = " +id;
+		
+		try {
+			// Para ejecutar la conexion
+			Statement st = conexion.getConnection().createStatement();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		finally {
+			conexion.disconnect();
+		}
+	}
+
+}

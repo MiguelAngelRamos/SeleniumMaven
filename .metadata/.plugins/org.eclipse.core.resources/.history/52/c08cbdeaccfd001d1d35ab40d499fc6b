@@ -1,0 +1,72 @@
+package beans;
+
+import java.io.Serializable;
+import java.sql.Date;
+
+public class Rent implements Serializable {
+	
+
+	private int id;
+	private String userName;
+	private Date rentalDate;
+	private boolean premiere;
+	private String genre;
+	
+	
+	public Rent() {
+	}
+
+	public Rent(int id, String userName, Date rentalDate, boolean premiere, String genre) {
+		this.id = id;
+		this.userName = userName;
+		this.rentalDate = rentalDate;
+		this.premiere = premiere;
+		this.genre = genre;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public Date getRentalDate() {
+		return rentalDate;
+	}
+
+	public void setRentalDate(Date rentalDate) {
+		this.rentalDate = rentalDate;
+	}
+
+	public boolean isPremiere() {
+		return premiere;
+	}
+
+	public void setPremiere(boolean premiere) {
+		this.premiere = premiere;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+}

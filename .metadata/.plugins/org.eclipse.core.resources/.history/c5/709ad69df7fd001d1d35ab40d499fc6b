@@ -1,0 +1,105 @@
+package beans;
+
+import java.io.Serializable;
+
+public class User implements Serializable {
+	
+
+	private String userName;
+	private String password;
+	private String name;
+	private String lastName;
+	private String email;
+	private double balance;
+	private boolean premium;
+	
+	public User() {
+
+	}
+	
+	public User(String userName, String password, String name, String lastName, String email, double balance,
+			boolean premium) {
+
+		this.userName = userName;
+		this.password = password;
+		this.name = name;
+		this.lastName = lastName;
+		this.email = email;
+		this.balance = balance;
+		this.premium = premium;
+	}
+
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public boolean isPremium() {
+		return premium;
+	}
+
+	public void setPremium(boolean premium) {
+		this.premium = premium;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	@Override
+	public String toString() {
+		return "Usuario [userName=" + userName + ", password=" + password + ", name=" + name + ", lastName=" + lastName
+				+ ", email=" + email + ", balance=" + balance + ", premium=" + premium + "]";
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+
+}

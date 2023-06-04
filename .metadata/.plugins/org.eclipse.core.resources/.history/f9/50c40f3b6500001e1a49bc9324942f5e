@@ -1,0 +1,9 @@
+package cl.awakelab.bootcamp.controller.interfaces;
+
+import java.util.List;
+
+import cl.awakelab.bootcamp.model.entity.Book;
+
+public class IBookController {
+	public List<Book> findAllBooks();
+}

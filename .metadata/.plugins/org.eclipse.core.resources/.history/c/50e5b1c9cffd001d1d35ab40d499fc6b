@@ -1,0 +1,10 @@
+package connection;
+
+public class DBConnection {
+	
+	private static final String DB = "books";
+	private static final String PORT = "books";
+	private static final String LOGIN = "books";
+	private static final String PASSWORD = "books";
+
+}

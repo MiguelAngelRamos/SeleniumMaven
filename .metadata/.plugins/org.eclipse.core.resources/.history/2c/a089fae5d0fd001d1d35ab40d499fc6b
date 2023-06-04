@@ -1,0 +1,24 @@
+package connection;
+
+import java.sql.Connection;
+
+public class DBConnection {
+	
+	private static final String DB = "library";
+	private static final String PORT = "3306";
+	private static final String LOGIN = "root";
+	private static final String PASSWORD = "academyjava";
+	private static final String URL_CONEXION = "jdbc:mysql://localhost:"+PORT+"/"+DB;
+	// private static final String URL_CONEXION = "jdbc:mariadb://localhost:"+PORT+"/"+DB;
+	
+	Connection connection = null;
+	
+	public DBConnection() {
+		try {
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+}

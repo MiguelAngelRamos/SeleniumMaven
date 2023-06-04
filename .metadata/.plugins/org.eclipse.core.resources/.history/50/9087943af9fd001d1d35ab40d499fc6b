@@ -1,0 +1,5 @@
+package cl.awakelab.bootcamp.controller.servlets.interfaces;
+
+public interface IUsuarioController {
+
+}

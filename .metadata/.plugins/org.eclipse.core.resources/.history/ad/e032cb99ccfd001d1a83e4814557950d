@@ -1,0 +1,31 @@
+package beans;
+
+import java.sql.Date;
+
+public class Rent {
+	
+	private int id;
+	private String userName;
+	private Date rentalDate;
+	private boolean premiere;
+	private String genre;
+	
+	
+	public Rent() {
+	}
+
+
+	public Rent(int id, String userName, Date rentalDate, boolean premiere, String genre) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.rentalDate = rentalDate;
+		this.premiere = premiere;
+		this.genre = genre;
+	}
+	
+	
+	
+	
+	
+}

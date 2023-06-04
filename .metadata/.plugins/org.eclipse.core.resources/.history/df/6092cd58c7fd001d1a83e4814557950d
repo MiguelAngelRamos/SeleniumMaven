@@ -1,0 +1,13 @@
+package beans;
+
+public class Usuario {
+	
+	private String userName;
+	private String password;
+	private String name;
+	private String lastName;
+	private String email;
+	private double balance;
+	private boolean premium;
+
+}

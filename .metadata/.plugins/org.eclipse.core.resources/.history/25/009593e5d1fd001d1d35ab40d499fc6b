@@ -1,0 +1,48 @@
+package connection;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DBConnection {
+	
+	private static final String DB = "library";
+	private static final String PORT = "3306";
+	private static final String LOGIN = "root";
+	private static final String PASSWORD = "academyjava";
+	private static final String URL_CONEXION = "jdbc:mysql://localhost:"+PORT+"/"+DB;
+	// private static final String URL_CONEXION = "jdbc:mariadb://localhost:"+PORT+"/"+DB;
+	
+	Connection connection = null;
+	
+	public DBConnection() {
+		
+		try {
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection(URL_CONEXION, LOGIN, PASSWORD);
+			
+			if(!(connection == null)) {
+				System.out.println("La conexión a: " + DB + "ha sido exitosa");
+			}
+			System.out.println("Conexion a: " + DB + "ha fallado");
+			
+			/*if( connection == null) {
+				System.out.println("La conexion a: "+ DB + "ha fallado");
+			} else {
+				System.out.println("La conexión a: " + DB + "ha sido exitosa");
+			}*/
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	
+	public Connection getConnection() {
+		return connection;
+	}
+	
+	public void desconectar() {
+		return connection;
+	}
+
+}

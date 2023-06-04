@@ -1,0 +1,30 @@
+$(document).ready(function() {
+  $("#form-login").submit(function(event) {
+    event.preventDefault();
+    authUser();
+  });
+});
+
+function authUser() {
+  let userName = $("#user").val();
+  let password = $("#password").val();
+
+  $.ajax({
+    type: "GET",
+    dataType: "html",
+    url: "./ServletUserLogin",
+    data: $.param({
+      username: userName,
+      password: password
+    }),
+    success: function(result) {
+      let parsedResult = JSON.parse(result);
+      console.log(parsedResult);
+      if(parsedResult != false) {
+        let username = parsedResult['userName'];
+        console.log("eyd");
+        document.location.href = "home.jsp?username="+username
+      }
+    }
+  })
+}

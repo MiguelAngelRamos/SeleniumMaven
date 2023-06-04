@@ -1,0 +1,52 @@
+package test;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import connection.DBConnection;
+
+public class OperacionesDB {
+	static DBConnection conexion;
+	
+	OperacionesDB() {
+		conexion =  DBConnection.getInstance();
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		updatedBook(1, "Historia");
+	}
+	
+	public static void updatedBook(int id, String genre) {
+		
+		String sql = "UPDATE books SET genre = '" + genre + "' WHERE id = " +id;
+		
+		try {
+			// Para ejecutar la conexión
+			// Declaración
+			Statement statement = conexion.getConnection().createStatement();
+			statement.executeQuery(sql);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		finally {
+			conexion.disconnect();
+		}
+	}
+	
+	
+	public static void listAllBook() {
+		String sql = "Select * from libros";
+		
+		try {
+			Statement statement = conexion.getConnection().createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		finally {
+			conexion.disconnect();
+		}
+	}
+
+}

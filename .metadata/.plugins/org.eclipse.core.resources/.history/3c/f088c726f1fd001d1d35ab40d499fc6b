@@ -1,0 +1,52 @@
+package test;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import connection.DBConnection;
+
+public class OperacionesDB {
+    private static DBConnection conexion;
+
+    OperacionesDB() {
+        conexion = DBConnection.getInstance();
+    }
+
+    public static void main(String[] args) {
+        OperacionesDB dbOperations = new OperacionesDB();
+        dbOperations.updateBook(1, "Historia");
+        dbOperations.listAllBook();
+        dbOperations.closeConnection();
+    }
+
+    public void updateBook(int id, String genre) {
+        String sql = "UPDATE books SET genre = ? WHERE id = ?";
+        try {
+            PreparedStatement preparedStatement = conexion.getConnection().prepareStatement(sql);
+            preparedStatement.setString(1, genre);
+            preparedStatement.setInt(2, id);
+            preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void listAllBook() {
+        String sql = "SELECT * FROM libros";
+        try {
+            Statement statement = conexion.getConnection().createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                // Procesar los resultados
+                System.out.println(rs.getString("nombreColumna")); // reemplaza "nombreColumna" por los nombres de las columnas que quieres imprimir
+            }
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void closeConnection() {
+        conexion.disconnect();
+    }
+}

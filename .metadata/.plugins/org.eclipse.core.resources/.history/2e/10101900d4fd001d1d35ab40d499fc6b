@@ -1,0 +1,16 @@
+package test;
+
+import connection.DBConnection;
+
+public class OperacionesDB {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static void updatedBook(int id, String genre) {
+		DBConnection.getInstance();
+	}
+
+}

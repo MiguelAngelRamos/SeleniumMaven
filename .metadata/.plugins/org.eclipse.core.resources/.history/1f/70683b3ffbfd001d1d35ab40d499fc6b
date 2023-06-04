@@ -1,0 +1,23 @@
+package cl.awakelab.bootcamp.controller;
+
+import cl.awakelab.bootcamp.controller.interfaces.IUsuarioController;
+import java.sql.Statement;
+import connection.DBConnection;
+
+public class UsuarioController implements IUsuarioController{
+
+	@Override
+	public String login(String username, String password) {
+		DBConnection conexion = DBConnection.getInstance();
+		
+		String sql = "SELECT * FROM usuarios WHERE username = '" +  username + "' and password'"+ password +"'"; 
+		
+	   try {
+		   Statement st = conexion.getConnection().createStatement();
+	   } catch (Exception e) {
+		   System.out.println(e.getMessage());
+	   }
+		
+	}
+
+}

@@ -1,0 +1,12 @@
+package beans;
+
+import java.sql.Date;
+
+public class Rent {
+	
+	private int id;
+	private String userName;
+	private Date rentalDate;
+	private boolean premiere;
+	private String gender;
+}

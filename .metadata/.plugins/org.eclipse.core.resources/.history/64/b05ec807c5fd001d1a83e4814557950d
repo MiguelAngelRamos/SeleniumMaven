@@ -1,0 +1,23 @@
+package beans;
+
+public class Libro {
+
+	private int id;
+	private String titulo;
+	private String genero;
+	private String autor;
+	private int copias;
+	private boolean novedad;
+	
+	public Libro(int id, String titulo, String genero, String autor, int copias, boolean novedad) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.genero = genero;
+		this.autor = autor;
+		this.copias = copias;
+		this.novedad = novedad;
+	}
+	
+	
+}

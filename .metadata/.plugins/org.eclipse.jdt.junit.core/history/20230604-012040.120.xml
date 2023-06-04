@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Runner" project="app" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="runner.Runner" time="17.414">
+    <testsuite name="Feature: Test Amazon search functionality" time="17.414">
+      <testcase name="As a customer when I search for product, I want to see if the thrid option on the second page is available for purchase and can be added to the card" classname="Test Amazon search functionality" time="17.414"/>
+    </testsuite>
+  </testsuite>
+</testrun>

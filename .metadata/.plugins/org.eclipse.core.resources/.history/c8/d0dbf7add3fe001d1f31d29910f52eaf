@@ -1,0 +1,54 @@
+package cl.awakelab.bootcamp.controller.servlets;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ServeletIndex
+ */
+@WebServlet("/ServeletIndex")
+public class ServeletIndex extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    Cookie[] cookies = request.getCookies();
+	    if(cookies != null) {
+	        for(Cookie cookie : cookies){
+	            if(cookie.getName().equals("credenciales")) {
+	                // Redireccionar a la página principal si la cookie "credenciales" existe
+	                response.sendRedirect("index.jsp");
+	                return;
+	            }
+	        }
+	    }
+	    // Mostrar el formulario de inicio de sesión si la cookie "credenciales" no existe
+	    request.getRequestDispatcher("index.jsp").forward(request, response);
+	}
+       
+	@Override
+	/*protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		//buscamos la cookie credenciales, si existe es que el
+		//usuario ya se autentic� con anterioridad
+		Cookie[] cookies=request.getCookies();
+		String url="index.jsp";
+		if(cookies!=null) {
+			for(Cookie ck:cookies) {
+				if(ck.getName().equals("credenciales")) {
+					String[] datos=ck.getValue().split("[-]");
+					url="ServletAuth?username="+datos[0]+"&password="+datos[1];
+				}
+			}
+		}
+		request.getRequestDispatcher(url).forward(request, response);
+	}
+	*/
+	
+
+}
